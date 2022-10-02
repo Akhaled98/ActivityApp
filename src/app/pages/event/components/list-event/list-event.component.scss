@@ -1,0 +1,56 @@
+.event {
+    cursor: pointer;
+    position: relative;
+    .vip-event-wrapper {
+    width: calc(300px);
+    height: calc(300px);
+    border: 1px solid #eee !important;
+    --tw-border-opacity: 1 !important;
+    border-color: rgba( var(--fuse-accent-500-rgb), var(--tw-border-opacity)) !important;
+    border-radius: 7.5px !important;
+    .event-cover {}
+    .event-data-wraper {
+    .title {}
+    .start-date {}
+    .end-date {}
+    .category {}
+    }
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 18%),
+    0px 8px 10px 1px rgb(170 170 170 / 0%),
+    0px 3px 14px 2px rgb(0 0 0 / 9%);
+    }
+    .vip-event-wrapper:hover {
+    margin-top: -2px;
+    width: calc(300px + 3px);
+    height: calc(300px + 2px);
+    box-shadow: 10px 10px 5px -2px rgb(0 0 0 / 18%), 10px 7px 10px 1px rgb(170 170 170 / 0%), 0px 12px 26px 2px rgb(0 0 0 / 9%);
+    }
+    }
+    @media (width: 1180px) {
+    .event {
+    width: calc(100% / 3);
+    }
+    }
+    @media (width: 820px) {
+    .event {
+    width: calc(100% / 2);
+    }
+    }
+    @media only screen and (min-device-width: 1181px) {
+    .event {
+    width: calc(100% / 4);
+    }
+    }
+    // @media (width: 1180px),
+    // (width: 820px) {
+    // .ipadStyle {
+    // @apply w-72;
+    // }
+    // .wrapper {
+    // cts-dynamic-filter {
+    // .aggregation-container {
+    // @apply w-44 #{!important};
+    // }
+    // }
+    // }
+    // }

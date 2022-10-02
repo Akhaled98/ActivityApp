@@ -1,0 +1,141 @@
+<div
+    class="text-primary flex flex-col ipad-ver:flex-col ipad-hor:flex-col sm:flex-row flex-0 sm:items-center sm:justify-content-between p-6 sm:py-8 ipad-ver:pb-2 ipad-hor:pb-2 sm:px-10 border-b dark:bg-transparent">
+    <div class="flex w-full justify-content-between">
+        <div class="flex-1 min-w-0">
+            <!-- Title -->
+            <div class="mt-2">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h2 *ngIf="!editMode"
+                        class="text-3xl md:text-4xl font-bold tracking-tight leading-7 sm:leading-10 truncate text-black">
+                        {{'EVENT.ACTIVITY_ADD' | translate}}
+                    </h2>
+                    <h2 *ngIf="editMode"
+                        class="text-3xl md:text-4xl font-bold tracking-tight leading-7 sm:leading-10 truncate text-black">
+                        {{'EVENT.ACTIVITY_EDIT' | translate}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-100 m-auto py-2">
+    <form [formGroup]='activeForm' (ngSubmit)='submitactiveForm(activeForm)'>
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="title">{{'EVENT.TITLE' | translate}} : <span
+                                *ngIf="activeForm.get('title')?.errors != null && activeForm.get('title')?.touched"
+                                class="
+                                text-danger">*</span></label>
+                        <input formControlName='title' type="text" class="form-control" id="title">
+                        <div *ngIf="activeForm.get('title')?.errors != null && activeForm.get('title')?.touched"
+                            class="alert alert-danger">
+                            <p *ngIf="activeForm.get('title')?.errors?.required">{{'EVENT.TITLE' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="description">{{'EVENT.DESCRIPTION' | translate}} :</label>
+                        <input formControlName='description' type="text" class="form-control" id="description">
+                        <div *ngIf="activeForm.get('description')?.errors != null && activeForm.get('description')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="activeForm.get('description')?.errors?.required">{{'EVENT.DESCRIPTION' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="py-1" for="categorization">{{'EVENT.CATEGORIZATION' | translate}} :</label>
+                        <input formControlName='categorization' type="text" class="form-control" id="categorization">
+                        <div *ngIf="activeForm.get('categorization')?.errors != null && activeForm.get('categorization')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="activeForm.get('categorization')?.errors?.required">{{'EVENT.CATEGORIZATION' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="py-1" for="organizers">{{'EVENT.ORGANIZERS' | translate}} :</label>
+                        <select formControlName="organizers" name="organizers" id="organizers" class="form-control">
+                            <option *ngFor="let item of organizers" [value]="item.id">{{item.title}}</option>
+                        </select>
+                        <div *ngIf="activeForm.get('organizers')?.errors != null && activeForm.get('organizers')?.touched"
+                            class="alert alert-danger">
+                            <p *ngIf="activeForm.get('organizers')?.errors?.required">{{'EVENT.ORGANIZERS' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="py-1" for="locations">{{'EVENT.LOCATIONS' | translate}} :</label>
+                        <input formControlName='locations' type="text" class="form-control" id="locations">
+                        <div *ngIf="activeForm.get('locations')?.errors != null && activeForm.get('locations')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="activeForm.get('locations')?.errors?.required">{{'EVENT.LOCATIONS' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="startDate">{{'EVENT.START_DATE' | translate}} :</label>
+                        <input formControlName='startDate' type="date" class="form-control" id="startDate">
+                        <div *ngIf="activeForm.get('startDate')?.errors != null && activeForm.get('startDate')?.touched"
+                            class="alert alert-danger">
+                            <p *ngIf="activeForm.get('startDate')?.errors?.required">{{'EVENT.START_DATE' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="endDate">{{'EVENT.END_DATE' | translate}} :</label>
+                        <input formControlName='endDate' type="date" class="form-control" id="endDate">
+                        <div *ngIf="activeForm.get('endDate')?.errors != null && activeForm.get('endDate')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="activeForm.get('endDate')?.errors?.required">{{'EVENT.END_DATE' | translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="timeFrom">{{'EVENT.TIME_FROM' | translate}} :</label>
+                        <input formControlName='timeFrom' type="time" class="form-control" id="timeFrom">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="timeTo">{{'EVENT.TIME_TO' | translate}} :</label>
+                        <input formControlName='timeTo' type="time" class="form-control" id="timeTo">
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2 d-flex justify-content-center align-items-center">
+                <div class="col-md-12">
+                    <label class="py-1" for="imgInput">{{'EVENT.COVER_PICTURE' | translate}} :</label>
+                    <input #imgInput hidden="true" type="file" (change)="onAttachFileChange($event)"
+                        accept=".png, .jpg, .jpeg" />
+                    <button class="btn btn-primary form-control" type="button" (click)="imgInput.click()">
+                        {{'EVENT.UPLOAD_COVER_PICTURE' | translate}}</button>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <button *ngIf="!editMode" [disabled]='activeForm.invalid' class="w-100 btn btn-outline-info "
+                        type="submit">{{'GENERAL.SAVE' | translate}}</button>
+                    <button *ngIf="editMode" [disabled]='activeForm.invalid' class="w-100 btn btn-outline-info "
+                        type="submit">{{'GENERAL.UPDATE' | translate}}</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="w-100 btn btn-outline-danger " type="button" routerLink="/event">{{'GENERAL.BACK' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+<div class="row bg-light">
+    <div *ngIf="EventAttatches !== ''" class="col-md-12" style="height: 100%; width: 100%;">
+        <img class="m-1" *ngFor="let image of EventAttatches" [src]="EventAttatches.path" width="24%" height="200px">
+    </div>
+
+    <div *ngIf="EventAttatches == ''" class="col-md-12 pt-5 pb-5" style="height: 100%; width: 100%; text-align: center;">
+        <img class="mt-5 mb-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGjXxt6MkBhjRXk_PWMSNRcKlquaioO-h_Nobe08rTMLncfiDDSESm22R_hy2i5cW9pn4&usqp=CAU" width="25%" height="250px">
+    </div>
+</div>

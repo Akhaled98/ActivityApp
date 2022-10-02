@@ -1,0 +1,34 @@
+.text-base {
+    font-size: 0.875rem !important;
+}
+
+.font-bold {
+    font-weight: 700 !important
+}
+
+.submission-button {
+    align-items: center; 
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    --tw-text-opacity: 1 !important;
+    color: rgba(255,255,255,var(--tw-text-opacity)) !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    border-radius: 1.5rem !important;
+    text-decoration: none;
+    border: none;
+}
+.viewEvent{
+    background-color: darken(#dedee0, 4.00);
+}
+
+
+// .submission-button:hover {
+//     background-color: rgba(var(--fuse-primary-600-rgb), var(--tw-bg-opacity)) !important;
+// }
+// .submission-button:hover {
+//     --tw-bg-opacity: 1 !important;
+//     background-color: rgba(var(--fuse-primary-600-rgb), var(--tw-bg-opacity)) !important;
+// }

@@ -1,0 +1,164 @@
+<div
+    class="text-primary flex flex-col ipad-ver:flex-col ipad-hor:flex-col sm:flex-row flex-0 sm:items-center sm:justify-content-between p-6 sm:py-8 ipad-ver:pb-2 ipad-hor:pb-2 sm:px-10 border-b dark:bg-transparent">
+    <div class="flex w-full justify-content-between">
+        <div class="flex-1 min-w-0">
+            <!-- Title -->
+            <div class="mt-2">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h2 *ngIf="!editMode"
+                        class="text-3xl md:text-4xl font-bold tracking-tight leading-7 sm:leading-10 truncate text-black">
+                        {{'ORGANIZER.ORGANIZE_ADD' | translate}}
+                    </h2>
+                    <h2 *ngIf="editMode"
+                        class="text-3xl md:text-4xl font-bold tracking-tight leading-7 sm:leading-10 truncate text-black">
+                        {{'ORGANIZER.ORGANIZE_EDIT' | translate}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-100 m-auto py-2">
+    <form [formGroup]='organizerForm' (ngSubmit)='submitOrganizerForm(organizerForm)'>
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="title">{{'EVENT.TITLE' | translate}} : <span
+                                *ngIf="organizerForm.get('name')?.errors != null && organizerForm.get('name')?.touched"
+                                class="
+                                text-danger">*</span></label>
+                        <input formControlName='name' type="text" class="form-control" id="name">
+                        <div *ngIf="organizerForm.get('name')?.errors != null && organizerForm.get('name')?.touched"
+                            class="alert alert-danger">
+                            <p *ngIf="organizerForm.get('name')?.errors?.required">{{'EVENT.TITLE' | translate}} &&
+                                {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="py-1" for="email_label">{{'ORGANIZER.LABEL' | translate}} :</label>
+                        <input formControlName='email_label' type="text" class="form-control" id="email_label">
+                        <div *ngIf="organizerForm.get('email_label')?.errors != null && organizerForm.get('email_label')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('email_label')?.errors?.required">{{'ORGANIZER.LABEL' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="py-1" for="email">{{'ORGANIZER.EMAIL' | translate}} :</label>
+                        <input formControlName='email' type="email" class="form-control" id="email">
+                        <div *ngIf="organizerForm.get('email')?.errors != null && organizerForm.get('email')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('email')?.errors?.required">{{'ORGANIZER.EMAIL' | translate}} &&
+                                {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="description">{{'EVENT.DESCRIPTION' | translate}} :</label>
+                        <input formControlName='description' type="text" class="form-control" id="description">
+                        <div *ngIf="organizerForm.get('description')?.errors != null && organizerForm.get('description')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('description')?.errors?.required">{{'EVENT.DESCRIPTION' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="py-1" for="address_label">{{'ORGANIZER.LABEL' | translate}} :</label>
+                        <input formControlName='address_label' type="text" class="form-control" id="address_label">
+                        <div *ngIf="organizerForm.get('address_label')?.errors != null && organizerForm.get('address_label')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('address_label')?.errors?.required">{{'ORGANIZER.LABEL' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="py-1" for="address">{{'ORGANIZER.ADDRESSES' | translate}} :</label>
+                        <input formControlName='address' type="text" class="form-control" id="address">
+                        <div *ngIf="organizerForm.get('address')?.errors != null && organizerForm.get('address')?.touched"
+                            class="alert alert-danger">
+                            <p *ngIf="organizerForm.get('address')?.errors?.required">{{'ORGANIZER.ADDRESSES' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="organizationActivity">{{'ORGANIZER.ACTIVITY' | translate}} :</label>
+                        <input formControlName='organizationActivity' type="text" class="form-control" id="organizationActivity">
+                        <div *ngIf="organizerForm.get('organizationActivity')?.errors != null && organizerForm.get('organizationActivity')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('organizationActivity')?.errors?.required">{{'ORGANIZER.ACTIVITY' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="py-1" for="phone_label">{{'ORGANIZER.LABEL' | translate}} :</label>
+                        <input formControlName='phone_label' type="text" class="form-control" id="phone_label">
+                        <div *ngIf="organizerForm.get('phone_label')?.errors != null && organizerForm.get('phone_label')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('phone_label')?.errors?.required">{{'ORGANIZER.LABEL' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="py-1" for="phone">{{'ORGANIZER.PHONE_NUMBERS' | translate}} :</label>
+                        <input formControlName='phone' type="tel" class="form-control" id="phone">
+                        <div *ngIf="organizerForm.get('phone')?.errors != null && organizerForm.get('phone')?.touched"
+                            class="alert alert-danger">
+                            <p *ngIf="organizerForm.get('phone')?.errors?.required">{{'ORGANIZER.PHONE_NUMBERS' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="py-1" for="website">{{'ORGANIZER.WEBSITE' | translate}} :</label>
+                        <input formControlName='website' type="text" class="form-control" id="organizationActivity">
+                        <div *ngIf="organizerForm.get('website')?.errors != null && organizerForm.get('website')?.touched"
+                            class="alert alert-danger ">
+                            <p *ngIf="organizerForm.get('website')?.errors?.required">{{'ORGANIZER.WEBSITE' |
+                                translate}} && {{'GENERAL.REQUIRED' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+              
+             
+            </div>
+
+
+
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <button *ngIf="!editMode" [disabled]='organizerForm.invalid' class="w-100 btn btn-outline-info "
+                        type="submit">{{'GENERAL.SAVE' | translate}}</button>
+                    <button *ngIf="editMode" [disabled]='organizerForm.invalid' class="w-100 btn btn-outline-info "
+                        type="submit">{{'GENERAL.UPDATE' | translate}}</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="w-100 btn btn-outline-danger " type="button" routerLink="/organizer">{{'GENERAL.BACK' |
+                        translate}}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

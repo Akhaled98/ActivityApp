@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import '~ngx-toastr/toastr';
+
+.ng-select.filter_select ::ng-deep .ng-select-container {
+    margin: 5px;
+    padding: 0 5px;
+}
+
+.shape {
+    width: 100% !important;
+    height: 100vh !important;
+    overflow: auto !important;
+}

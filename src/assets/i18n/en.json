@@ -1,0 +1,53 @@
+{
+    "DIR": "ltr",
+    "GENERAL": {
+        "ADD": "ADD",
+        "UPDATE": "Update",
+        "DELETE": "DELETE",
+        "VIEW": "VIEW",
+        "SAVE":"Save",
+        "REQUIRED":"Required",
+        "BACK":"Go Back"
+    },
+    "EVENT": {
+        "ACTIVITIES": "Activities",
+        "ACTIVITY_ADD": "Add Activity",
+        "ACTIVITY_EDIT": "Edit Activity",
+        "TITLE": "Title",
+        "ACTIVITY_START_DATE": "Activity Start Date",
+        "ACTIVITY_END_DATE": "Activity End Date",
+        "START_DATE": "Start Date",
+        "END_DATE": "End Date",
+        "CREATE_DATE": "Created Date",
+        "DESCRIPTION": "Description",
+        "TIME_FROM": "Time From",
+        "TIME_TO": "Time To",
+        "LOCATIONS": "Locations",
+        "COVER_PICTURE": "Cover Picture",
+        "UPLOAD_COVER_PICTURE": "Upload Cover Picture",
+        "ORGANIZERS": "Organizers",
+        "CATEGORIZATION": "Categorization",
+        "ACTIVITY_TITLE": "Activity Title",
+        "CREATED_AT": "Created At",
+        "FROM": "From",
+        "TO": "To",
+        "CREATOR": "Creator",
+        "VIEW_ORGANIZERS": "View Organizers",
+        "INVALID_DATE":"Invalid date"
+
+    },
+    "ORGANIZER": {
+        "ORGANIZERS": "Organizers",
+        "TITLE": "Title",
+        "ADDRESSES": "Addresses",
+        "EMAIL": "Email",
+        "NAME": "Name",
+        "ACTIVITY": "Activity",
+        "WEBSITE": "Website",
+        "PHONE_NUMBERS": "Phone Numbers",
+        "ORGANIZE_ADD": "Add Organizer",
+        "ORGANIZE_EDIT": "Edit Organizer",
+        "LABEL":"Label"
+
+    }
+}

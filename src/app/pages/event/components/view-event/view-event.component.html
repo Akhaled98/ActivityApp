@@ -1,0 +1,194 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+    <!-- Header -->
+    <div class="flex flex-col p-0 sm:py-0 min-h-72 sm:pt-0 border-b bg-accent-100 dark:bg-transparent">
+        <div class="min-w-0">
+            <div class="flex-auto sm:px-10 rounded-t-2xl">
+                <div class="h-auto w-auto">
+                    <div class="shared-grid">
+                        <div class="col-span-4">
+                            <div class="lg:-mx-10 sm:-mx-7">
+                                <div class="d-flex flex-row justify-between  p-5 viewEvent" style="flex-wrap: wrap; "
+                                    *ngIf="eventData">
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.TITLE"
+                                                | translate
+                                                }}:</span>
+                                            <span *ngIf="eventData.title != null || eventData.title != undefined"
+                                                class="text-base text-black">{{ eventData.title }}</span>
+                                            <span *ngIf="eventData.title == null || eventData.title == undefined"
+                                                class="text-base text-black">----</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.CREATE_DATE"
+                                                | translate
+                                                }}:</span>
+                                            <span
+                                                *ngIf="eventData.createdDate != null || eventData.createdDate != undefined"
+                                                class="text-base text-black">{{ eventData.createdDate
+                                                }}</span>
+                                            <span
+                                                *ngIf="eventData.createdDate == null || eventData.createdDate == undefined"
+                                                class="text-base text-black">{{'EVENT.INVALID_DATE' |translate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-2">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.START_DATE"
+                                                | translate
+                                                }}:</span>
+                                            <span
+                                                *ngIf="eventData.startDate != null || eventData.startDate != undefined"
+                                                class="text-base text-black">{{ eventData.startDate
+                                                }}</span>
+                                            <span
+                                                *ngIf="eventData.startDate == null || eventData.startDate == undefined"
+                                                class="text-base text-black">{{'EVENT.INVALID_DATE' |translate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.END_DATE"
+                                                | translate
+                                                }}:</span>
+                                            <span *ngIf="eventData.endDate != null || eventData.endDate != undefined"
+                                                class="text-base text-black">{{ eventData.endDate
+                                                }}</span>
+                                            <span *ngIf="eventData.endDate == null || eventData.endDate == undefined"
+                                                class="text-base text-black">{{'EVENT.INVALID_DATE' |translate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.TIME_FROM"
+                                                | translate
+                                                }}:</span>
+                                            <span *ngIf="eventData.timeFrom != null || eventData.timeFrom != undefined"
+                                                class="text-base text-black">{{
+                                                eventData.timeFrom}}</span>
+                                            <span *ngIf="eventData.timeFrom == null || eventData.timeFrom == undefined"
+                                                class="text-base text-black">
+                                                ----</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.TIME_TO"
+                                                | translate
+                                                }}:</span>
+                                            <span *ngIf="eventData.timeTo != null || eventData.timeTo != undefined"
+                                                class="text-base text-black">{{ eventData.timeTo
+                                                }}</span>
+                                            <span *ngIf="eventData.timeTo == null || eventData.timeTo == undefined"
+                                                class="text-base text-black">----
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.CREATOR"
+                                                | translate
+                                                }}:</span>
+                                            <span *ngIf="eventData.creator != null || eventData.creator != undefined"
+                                                class="text-base text-black">
+                                                {{ eventData.creator }}</span>
+                                            <span *ngIf="eventData.creator == null || eventData.creator == undefined"
+                                                class="text-base text-black">
+                                                ----</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.CATEGORIZATION"
+                                                | translate
+                                                }}:</span>
+                                            <span
+                                                *ngIf="eventData.categorization != null || eventData.categorization != undefined"
+                                                class="text-base text-black">
+                                                {{ eventData.categorization }}</span>
+                                            <span
+                                                *ngIf="eventData.categorization == null || eventData.categorization == undefined"
+                                                class="text-base text-black">
+                                                ----</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 gap-x-2 flex px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.LOCATIONS"
+                                                | translate
+                                                }}:</span>
+                                            <span
+                                                *ngIf="eventData.locations != null || eventData.locations != undefined"
+                                                class="text-base text-black">
+                                                {{ eventData.locations }}</span>
+                                            <span
+                                                *ngIf="eventData.locations == null || eventData.locations == undefined"
+                                                class="text-base text-black">
+                                                ----</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 py-3">
+                                        <div class="flex-1 gap-x-2 flex col-span-2 px-2 items-center">
+                                            <span class="text-base text-black-200 font-bold">{{
+                                                "EVENT.DESCRIPTION"
+                                                | translate
+                                                }}:</span>
+                                            <span
+                                                *ngIf="eventData.description != null || eventData.description != undefined"
+                                                class="text-base text-black">
+                                                {{ eventData.description}}</span>
+                                            <span
+                                                *ngIf="eventData.description == null || eventData.description == undefined"
+                                                class="text-base text-black">
+                                                ----</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 py-3">
+                                        <div class="flex-1 flex col-span-1 items-center">
+                                            <button class="submission-button w-50 py-2 bg-primary"
+                                                (click)="ShowOrganizers()">
+                                                <span>{{"EVENT.VIEW_ORGANIZERS" | translate }}</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 py-3">
+                                        <div class="flex-1 flex col-span-1 items-center">
+                                            <button class="submission-button w-50 py-2 bg-danger" (click)="
+                                                goToList()">
+                                                <span>{{"GENERAL.BACK" | translate }}</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-progress-bar mode="indeterminate" [value]="25" *ngIf="showSpinner&&eventData"></mat-progress-bar>
+
+    <!-- Main -->
+    <ng-container *ngIf="eventData">
+        <app-event-attatchments [eventId]="eventData.id" (finishLoading)="finishGettingMedia($event)" class="w-full">
+        </app-event-attatchments>
+    </ng-container>
+
+
+   
+</div>
